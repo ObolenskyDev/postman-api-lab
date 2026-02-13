@@ -1,0 +1,4 @@
+/tests/api/reports/
+*.log
+
+*.postman_test_run.json

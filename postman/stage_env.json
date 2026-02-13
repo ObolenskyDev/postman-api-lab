@@ -1,0 +1,28 @@
+{
+	"id": "9b48a49e-19b7-4898-b757-dfc4b9a4fabf",
+	"name": "JSONPlaceholder-Stage",
+	"values": [
+		{
+			"key": "base_url",
+			"value": "https://jsonplaceholder.typicode.com",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "random_user_name",
+			"value": "",
+			"type": "any",
+			"enabled": true
+		},
+		{
+			"key": "random_job",
+			"value": "",
+			"type": "any",
+			"enabled": true
+		}
+	],
+	"color": null,
+	"_postman_variable_scope": "environment",
+	"_postman_exported_at": "2026-02-03T23:02:03.746Z",
+	"_postman_exported_using": "Postman/11.81.4"
+}
