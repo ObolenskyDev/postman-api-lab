@@ -1,10 +1,9 @@
 {
   "info": {
     "_postman_id": "8bbeeac1-7697-4176-9339-d8cc872c7069",
-    "name": "Alfa-Bank Case: Automated API Testing",
-    "description": "API Automation Tests",
-    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-    "_exporter_id": "51441146"
+    "name": "REST API Automation Framework",
+    "description": "API Automation Tests for CRUD operations",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
   },
   "item": [
     {
@@ -68,9 +67,9 @@
           "listen": "prerequest",
           "script": {
             "exec": [
-              "const randomId = Math.floor(Math.random() * 1000);",
-              "pm.environment.set(\"random_user_name\", \"User_\" + randomId);",
-              "pm.environment.set(\"random_job\", \"Engineer_\" + randomId);"
+              "// Используем встроенную библиотеку Faker.js в Postman для генерации реальных фейковых данных",
+              "pm.environment.set(\"random_user_name\", pm.variables.replaceIn('{{$randomFullName}}'));",
+              "pm.environment.set(\"random_job\", pm.variables.replaceIn('{{$randomJobTitle}}'));"
             ],
             "type": "text/javascript"
           }
@@ -78,7 +77,13 @@
       ],
       "request": {
         "method": "POST",
-        "header": [],
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
         "body": {
           "mode": "raw",
           "raw": "{\n    \"name\": \"{{random_user_name}}\",\n    \"job\": \"{{random_job}}\"\n}",
@@ -110,10 +115,19 @@
       ],
       "request": {
         "method": "PUT",
-        "header": [],
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
         "body": {
           "mode": "raw",
-          "raw": ""
+          "raw": "{\n    \"id\": 1,\n    \"name\": \"Updated User Name\",\n    \"job\": \"Senior Automation Engineer\"\n}",
+          "options": {
+            "raw": { "language": "json" }
+          }
         },
         "url": {
           "raw": "{{base_url}}/posts/1",

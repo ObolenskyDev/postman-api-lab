@@ -20,6 +20,6 @@
   * SLA (Response time < 1200ms).
 
 ## 🚀 Запуск
-1. Импорт `alfa_api_collection.json` и `stage_env.json` в Postman.
+1. Импорт `api_automation_collection.json` и `stage_env.json` в Postman.
 2. Выбор окружения **JSONPlaceholder-Stage**.
 3. Запуск через **Collection Runner**.
